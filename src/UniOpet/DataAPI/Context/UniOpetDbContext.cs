@@ -1,7 +1,6 @@
 ﻿namespace DataAPI.Context
 {
     public partial class UniOpetDbContext : System.Data.Entity.DbContext
-    //: Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext<Models.ApplicationUser>
     {
         public UniOpetDbContext() : base("UniOpetConnection")
         {

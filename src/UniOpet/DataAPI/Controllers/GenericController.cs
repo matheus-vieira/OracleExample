@@ -7,7 +7,7 @@ namespace DataAPI.Controllers
         protected readonly Context.UniOpetDbContext Database;
         private readonly System.Data.Entity.DbSet<TEntity> _dbSet;
 
-        public GenericController()
+        protected GenericController()
         {
             Database = new Context.UniOpetDbContext();
             _dbSet = Database.Set<TEntity>();

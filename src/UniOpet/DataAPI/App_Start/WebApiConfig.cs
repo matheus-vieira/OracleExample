@@ -5,6 +5,9 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Web.Http.OData.Builder;
+using System.Web.Http.OData.Extensions;
+using DataAPI.Models;
 
 namespace DataAPI
 {
@@ -25,6 +28,11 @@ namespace DataAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var builder = new ODataConventionModelBuilder();
+            builder.EntitySet<Grade>("Grades1");
+            builder.EntitySet<Student>("Students");
+            config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }
 }
