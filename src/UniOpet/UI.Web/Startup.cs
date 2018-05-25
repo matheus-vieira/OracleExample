@@ -35,6 +35,8 @@ namespace UI.Web
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped(typeof(IGenericApiService<>), typeof(GenericApiService<>));
+
 
             services.AddMvc();
         }
